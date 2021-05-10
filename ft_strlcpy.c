@@ -5,18 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 14:27:21 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/10 14:30:08 by gvitor-s         ###   ########.fr       */
+/*   Created: 2021/05/10 14:39:45 by gvitor-s          #+#    #+#             */
+/*   Updated: 2021/05/10 15:50:19 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlcpy(char *s1, char *s2)
+int	ft_strlcpy(char *dst, const char *src, int size)
 {
-	int	i;
+	int	counter_i;
+	int	counter_j;
 
-	i = 0;
-	while (s2)
-		s1[i++] = *(s2++);
-	s1[i] = '\0';
-	return (s1);
+	counter_i = 0;
+	counter_j = 0;
+	while (size-- > 0 && src[counter_j])
+		dst[counter_i++] = src[counter_j++];
+	dst[counter_i] = '\0';
+	return (counter_i);
 }
