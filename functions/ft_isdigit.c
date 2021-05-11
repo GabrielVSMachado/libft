@@ -6,11 +6,11 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:05:27 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/11 13:06:45 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/11 13:55:14 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
