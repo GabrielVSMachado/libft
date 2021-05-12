@@ -6,11 +6,11 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 12:16:45 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/11 12:37:07 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/12 17:55:53 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	counter_str;
 	int	minus_signal;
