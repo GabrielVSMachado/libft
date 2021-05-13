@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:46:28 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/10 13:51:35 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/12 17:51:35 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *string)
+#include <stddef.h>
+size_t	ft_strlen(char *string)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (string[i])
