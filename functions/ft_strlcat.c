@@ -6,14 +6,15 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 15:55:44 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/10 17:05:56 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/13 12:55:02 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcat(char *dst, const char *src, int buffer_size)
+#include <stddef.h>
+size_t	ft_strlcat(char *dst, const char *src, size_t buffer_size)
 {
-	int	counter_i;
-	int	counter_j;
+	size_t	counter_i;
+	size_t	counter_j;
 
 	counter_i = 0;
 	counter_j = 0;
