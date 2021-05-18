@@ -6,12 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:46:28 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/12 17:51:35 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/18 13:43:35 by mmassaak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-size_t	ft_strlen(char *string)
+size_t	ft_strlen(const char *string)
 {
 	size_t	i;
 
