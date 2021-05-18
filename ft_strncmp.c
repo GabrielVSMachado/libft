@@ -6,12 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 18:40:07 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/18 18:40:09 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/18 18:59:07 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int	ft_strncmp(char *s1, char *s2, size_t size_cmp)
+int	ft_strncmp(const char *s1, const char *s2, size_t size_cmp)
 {
 	int	counter_s1;
 	int	counter_s2;
