@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 12:18:16 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/18 16:14:47 by mmassaak         ###   ########.fr       */
+/*   Created: 2021/05/18 17:08:19 by gvitor-s          #+#    #+#             */
+/*   Updated: 2021/05/18 17:08:22 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
+#ifndef LIBFT_H
 # define LIBFT_H
-/**Libs**/
-# include <stddef.h>
-/**Function prototypes LIBC **/
+
+# include<stddef.h>
+
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
