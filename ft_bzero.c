@@ -6,19 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 18:36:30 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/18 18:36:34 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/19 14:45:38 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while ((int)n > i)
-	{
-		((char *)s)[i] = '\0';
-		i++;
-	}
+	ft_memset(s, '\0', n);
 }
