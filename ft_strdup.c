@@ -18,8 +18,8 @@ char	*ft_strdup(const char *src)
 	int		counter_src;
 
 	dst = (char *)malloc(sizeof(char) * ft_strlen(src));
-	counter_src = 0;
-	while (src[counter_src])
-		dst[counter_src] = src[counter_src++];
+	counter_src = -1;
+	while (src[++counter_src])
+		dst[counter_src] = src[counter_src];
 	return (dst);
 }
