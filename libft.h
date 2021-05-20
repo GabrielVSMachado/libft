@@ -30,7 +30,7 @@ char	*ft_strdup(const char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strrchr(const char *s, int c);
-char	*ft_strnstr(const char *big, const char little, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
