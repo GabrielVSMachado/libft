@@ -18,5 +18,6 @@ void	*ft_calloc(size_t ntype, size_t size)
 	if (ntype == 0 || size == 0)
 		return (NULL);
 	r = malloc(ntype * size);
+	ft_bzero(r, (ntype * size));
 	return (r);
 }
