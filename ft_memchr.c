@@ -14,7 +14,6 @@
 void	*ft_memchr(const void *str, int c, size_t n)
 {
 	unsigned char	*c_str;
-	void			*result;
 	size_t			counter;
 
 	counter = 0;
@@ -25,14 +24,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 			break ;
 		counter++;
 	}
-	if (counter == n)
-	{
-		result = c_str;
-		return (result);
-	}
-	else
-	{
-		result = c_str + counter;
-		return (result);
-	}
+	if (!c_str[counter])
+		return (NULL);
+	return ((void *)str + counter);
 }
