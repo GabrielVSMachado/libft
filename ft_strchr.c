@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	while (*str && *str != (char) c)
 		str++;
-	return (str);
+	return ((char *)str);
 }
