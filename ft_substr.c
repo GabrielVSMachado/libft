@@ -14,14 +14,14 @@
 char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	char	*substr;
-	int		counter;
+	size_t	counter;
 
 	substr = (char *)malloc(sizeof(char) * len);
 	if (substr == NULL)
 		return (NULL);
-	counter = 0;
-	while (counter < len)
-		substr[counter++] = str[start + counter];
+	counter = -1;
+	while (counter++ < len)
+		substr[counter] = str[start + counter];
 	substr[counter] = '\0';
 	return (substr);
 }
