@@ -22,8 +22,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 			counter_j++;
 		return (counter_j);
 	}
-	while (size-- > 0 && src[counter_j])
-		dst[counter_j++] = src[counter_j++];
+	while (size-- > 0 && src[counter_j++])
+		dst[counter_j] = src[counter_j];
 	dst[counter_j] = '\0';
 	return (counter_j);
 }
