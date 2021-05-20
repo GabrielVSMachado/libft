@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	counter_b;
 
 	if (little == NULL)
-		return (big);
+		return ((char *)big);
 	counter_b = 0;
 	while (big[counter_b])
 	{
@@ -32,5 +32,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (big[counter_b] == '\0')
 		return (NULL);
 	big += counter_b;
-	return (big);
+	return ((char *)big);
 }
