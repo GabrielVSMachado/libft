@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	int	counter;
 
@@ -20,5 +20,5 @@ char	ft_strrchr(const char *str, int c)
 	counter--;
 	while (str[counter] && str[counter] != c)
 		counter--;
-	return (&str[counter]);
+	return ((char *)&str[counter]);
 }
