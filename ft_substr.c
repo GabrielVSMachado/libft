@@ -20,7 +20,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	if (substr == NULL)
 		return (NULL);
 	counter = -1;
-	while (counter++ < len)
+	while (++counter < len)
 		substr[counter] = str[start + counter];
 	substr[counter] = '\0';
 	return (substr);
