@@ -14,7 +14,7 @@ char	*ft_strrchr(const char *str, int c)
 {
 	int	counter;
 
-	counter++;
+	counter = 0;
 	while (str[counter])
 		counter++;
 	counter--;
