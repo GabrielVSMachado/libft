@@ -21,5 +21,6 @@ char	*ft_strdup(const char *src)
 	counter_src = -1;
 	while (src[++counter_src])
 		dst[counter_src] = src[counter_src];
+	dst[counter_src] = '\0';
 	return (dst);
 }
