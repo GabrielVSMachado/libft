@@ -9,27 +9,38 @@
 /*   Updated: 2021/05/12 17:55:53 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+#define	TRUE 1
+#define	FALSE 0
+static	int	is_space(int c);
 
 int	ft_atoi(const char *str)
 {
-	int	counter_str;
 	int	minus_signal;
 	int	result;
 
-	minus_signal = 0;
-	counter_str = 0;
-	if (str[counter_str] == '-')
+	minus_signal = FALSE;
+	while (is_space(*str))
+		str++;
+	if (*str == '-')
 	{
-		minus_signal = 1;
-		counter_str++;
+		minus_signal = TRUE;
+		str++;
 	}
 	result = 0;
-	while (str[counter_str])
+	while (*str && ft_isdigit(*str))
 	{
-		result = result * 10 + (str[counter_str] - '0');
-		counter_str++;
+		result = result * 10 + (*str - '0');
+		str++;
 	}
 	if (minus_signal)
 		return (result * (-1));
 	return (result);
+}
+
+static int	is_space(int c)
+{
+	if ((c >= '\t' && c <= '\r') || c == ' ')
+		return (TRUE);
+	return (FALSE);
 }
