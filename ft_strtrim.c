@@ -11,19 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static	int	is_in_set(char c, const char *set)
-{
-	size_t	counter;
-
-	counter = -1;
-	while (set[++counter])
-	{
-		if (c == set[counter])
-			return (1);
-	}
-	return (0);
-}
+static	int	is_in_set(char c, const char *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -51,4 +39,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 		counter_s1_final--;
 	cpy_s1 = ft_substr(s1, counter_s1, counter_s1_final - counter_s1 + 1);
 	return (cpy_s1);
+}
+
+static	int	is_in_set(char c, const char *set)
+{
+	size_t	counter;
+
+	counter = -1;
+	while (set[++counter])
+	{
+		if (c == set[counter])
+			return (1);
+	}
+	return (0);
 }
