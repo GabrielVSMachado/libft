@@ -20,7 +20,6 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 		{
 			dst++;
 			src++;
-			*((char *)dst) = *((char *)src);
 			return (dst);
 		}
 		dst++;
