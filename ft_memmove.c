@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:43:30 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/18 17:43:36 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/23 15:40:21 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,10 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 			counter_dst++;
 		}
 	}
-	else if (dst > src)
+	else
 	{
-		while (n > 0)
-		{
+		while (n-- != 0)
 			c_dst[n] = c_src[n];
-			n--;
-		}
 	}
 	return (dst);
 }
