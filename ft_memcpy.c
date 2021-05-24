@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 18:37:48 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/18 18:37:52 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/24 12:54:16 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t buffer_size)
 	size_t	counter_dst;
 	size_t	counter_src;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	counter_dst = 0;
 	counter_src = 0;
 	while (buffer_size > counter_dst)
-		((char *)dst)[counter_dst++] = ((char *)src)[counter_src++];
+		((unsigned char *)dst)[counter_dst++] = ((unsigned char *)src)[counter_src++];
 	return (dst);
 }
