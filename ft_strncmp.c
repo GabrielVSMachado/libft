@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 18:40:07 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/23 11:26:25 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/24 09:10:53 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t size_cmp)
 		return (0);
 	counter_s1 = 0;
 	counter_s2 = 0;
-	while (s1[counter_s1] == s2[counter_s2] && --size_cmp > 0)
+	while (s1[counter_s1] == s2[counter_s2] && --size_cmp != 0)
 	{
 		counter_s1++;
 		counter_s2++;
