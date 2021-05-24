@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 12:16:45 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/12 17:55:53 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:34:37 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -27,6 +27,8 @@ int	ft_atoi(const char *str)
 		minus_signal = TRUE;
 		str++;
 	}
+	else if (*str == '+')
+		str++;
 	result = 0;
 	while (*str && ft_isdigit(*str))
 	{
