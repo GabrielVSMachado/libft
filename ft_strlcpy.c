@@ -13,17 +13,13 @@
 #include "libft.h" 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	counter_j;
+	size_t	counter;
 
-	counter_j = 0;
+	counter = 0;
 	if (size == 0)
-	{
-		while (src[counter_j])
-			counter_j++;
-		return (counter_j);
-	}
-	while (size-- > 0 && src[counter_j++])
-		dst[counter_j] = src[counter_j];
-	dst[counter_j] = '\0';
-	return (counter_j);
+		return (ft_strlen(src));
+	while (--size != 0 && *src)
+		dst[counter++] = *(src++);
+	dst[counter] = '\0';
+	return (counter);
 }
