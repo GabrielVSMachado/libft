@@ -37,13 +37,11 @@ char	**ft_split(char const *s, char c)
 			break ;
 		len_btw_s_c = ft_strchr(s, c) - s;
 		p_tmp = (char *)malloc(sizeof(char) * (len_btw_s_c + 1));
-		counter = ft_strlcpy(p_tmp, s, len_btw_s_c);
-		*(s_splited + counter_s_splited) = (char *)malloc(sizeof(char) * (counter + 1));
-		ft_strlcpy(*s_splited + counter_s_splited, p_tmp, counter);
+		counter = ft_strlcpy(p_tmp, s, len_btw_s_c + 1);
+		*(s_splited + counter_s_splited) = p_tmp; 
 		counter_s_splited++;
 		if (n_pointers < counter_s_splited)
 			break ;
-		free(p_tmp);
 	}
 	*(s_splited + counter_s_splited) = NULL;
 	return (s_splited);
