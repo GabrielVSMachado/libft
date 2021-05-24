@@ -30,11 +30,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	else if (dst > src)
 	{
-		while (n > 0)
-		{
+		while (--n != 0)
 			c_dst[n] = c_src[n];
-			n--;
-		}
 	}
 	return (dst);
 }
