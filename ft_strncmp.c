@@ -20,7 +20,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t size_cmp)
 		return (0);
 	counter_s1 = 0;
 	counter_s2 = 0;
-	while (s1[counter_s1] == s2[counter_s2] && --size_cmp > 0)
+	while (s1[counter_s1] == s2[counter_s2] && --size_cmp != 0)
 	{
 		counter_s1++;
 		counter_s2++;
