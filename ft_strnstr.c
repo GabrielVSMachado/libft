@@ -6,31 +6,24 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 14:01:08 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/19 14:36:50 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/24 09:52:05 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	counter_l;
-	size_t	counter_b;
+	size_t	len_li;
 
-	if (little == NULL)
+	len_li = ft_strlen(little);
+	if (len_li == 0)
 		return ((char *)big);
-	counter_b = 0;
-	while (big[counter_b])
+	while (*big && len != 0)
 	{
-		counter_l = 0;
-		while (big[counter_b + counter_l] == little[counter_l]
-			&& counter_l != len - 1)
-			counter_l++;
-		if (counter_l == len - 1)
-			break ;
-		counter_b++;
+		if (ft_strncmp(big, little, len_li) == 0 && len >= len_li)
+			return ((char *)big);
+		big++;
+		len--;
 	}
-	if (big[counter_b] == '\0')
-		return (NULL);
-	big += counter_b;
-	return ((char *)big);
+	return (NULL);
 }
