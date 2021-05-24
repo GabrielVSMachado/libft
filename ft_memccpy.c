@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 13:49:17 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/18 14:16:58 by mmassaak         ###   ########.fr       */
+/*   Updated: 2021/05/24 12:57:31 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 {
 	while (n)
 	{
-		*((char *)dst) = *((char *)src);
-		if (*((char *)src) == c)
+		*((unsigned char *)dst) = *((unsigned char *)src);
+		if (*((unsigned char *)src) == (unsigned char)c)
 		{
 			dst++;
 			src++;
