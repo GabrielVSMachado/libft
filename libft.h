@@ -26,6 +26,7 @@ void	*ft_calloc(size_t type, size_t size);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
+char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *str, unsigned int start, size_t len);
 char	*ft_strdup(const char *str);
 char	*ft_strtrim(const char *s1, const char *set);
