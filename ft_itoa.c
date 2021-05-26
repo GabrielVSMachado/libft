@@ -6,14 +6,15 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:20:06 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/24 22:20:06 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/26 19:30:18 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "limits.h"
 static size_t	len_n(unsigned int n);
-static char	convert_str_n(char *n_str, unsigned int n, unsigned int i);
+static char		convert_str_n(char *n_str, unsigned int n, unsigned int i);
+
 char	*ft_itoa(int n)
 {
 	char			*n_str;
@@ -53,5 +54,5 @@ static char	convert_str_n(char *n_str, unsigned int n, unsigned int i)
 {
 	if (n < 10)
 		return (n_str[i++] = n % 10);
-	return (convert_str_n(n_str, n / 10, i)); 
+	return (convert_str_n(n_str, n / 10, i));
 }
