@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:20:06 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/26 19:30:18 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/26 20:13:25 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ static size_t	len_n(unsigned int n_tmp)
 {
 	size_t			len;
 
-	if (n_tmp == INT_MAX)
-		return (10);
-	else if (n_tmp == INT_MIN)
+	if (n_tmp == (unsigned int)INT_MAX)
 		return (11);
 	len = -1;
 	while (n_tmp % 10 >= 0)
