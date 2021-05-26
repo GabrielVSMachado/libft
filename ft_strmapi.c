@@ -6,12 +6,11 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:29:37 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/26 19:49:15 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/26 20:09:51 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static char	params(unsigned int i, char c);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
