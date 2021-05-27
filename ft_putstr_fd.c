@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 11:09:03 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/27 11:12:38 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/27 17:36:27 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	counter;
 
+	if (!s)
+		return ;
 	counter = 0;
-	while (s[counter++])
-		ft_putchar_fd(s[counter], fd);
+	while (s[counter])
+		ft_putchar_fd(s[counter++], fd);
 }
