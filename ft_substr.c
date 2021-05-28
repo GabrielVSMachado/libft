@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:18:29 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/26 19:42:05 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:58:25 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	len_alloc;
 	size_t	len_s;
 
+	if (!s)
+		return (NULL);
 	len_s = ft_strlen(s);
 	if (len_s < (size_t)start)
 		len_alloc = 1;

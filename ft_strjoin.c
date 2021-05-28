@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 20:04:44 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/19 20:04:44 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:00:06 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		counter;
 	int		len_f_str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len_f_str = (ft_strlen(s1) + ft_strlen(s2) + 1);
 	final_str = (char *)malloc(sizeof(char) * len_f_str);
 	if (final_str == NULL)
