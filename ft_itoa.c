@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:20:06 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/26 20:13:25 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:40:00 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,31 @@ char	*ft_itoa(int n)
 	unsigned int	n_tmp;
 
 	if (n < 0)
-		n_tmp = (-1) * n;
+	{
+		n_tmp = (size_t)(-1) * n;
+		n_str = (char *)malloc(sizeof(char) * (len_n(n_tmp) + 2));
+		n_str[0] = '-';
+		convert_str_n(n_str, n_tmp, 1);
+	}
 	else
+	{
 		n_tmp = n;
-	n_str = (char *)malloc(sizeof(char) * (len_n(n_tmp) + 1));
+		n_str = (char *)malloc(sizeof(char) * (len_n(n_tmp) + 1));
+		convert_str_n(n_str, n_tmp, 0);
+	}
 	if (n_str == NULL)
 		return (NULL);
-	if (n < 0)
-		n_str[0] = '-';
-	convert_str_n(n_str, n_tmp, 0);
 	return (n_str);
 }
 
 static size_t	len_n(unsigned int n_tmp)
 {
-	size_t			len;
+	size_t	len;
 
+	len = 0;
 	if (n_tmp == (unsigned int)INT_MAX)
 		return (11);
-	len = -1;
-	while (n_tmp % 10 >= 0)
+	while (n_tmp)
 	{
 		n_tmp /= 10;
 		len++;
