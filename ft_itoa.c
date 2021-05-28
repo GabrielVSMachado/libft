@@ -6,12 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:20:06 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/28 15:40:00 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:09:13 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "limits.h"
+#include <limits.h>
 static size_t	len_n(unsigned int n);
 static char		convert_str_n(char *n_str, unsigned int n, unsigned int i);
 
