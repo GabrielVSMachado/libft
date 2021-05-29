@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 12:36:03 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/29 13:20:13 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/29 16:10:01 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	size_t	i;
 	t_list	*p_tmp;
 
-	p_tmp = lst->next;
+	p_tmp = lst;
 	i = 0;
 	while (p_tmp)
 	{
