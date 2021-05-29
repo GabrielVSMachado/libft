@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 11:53:04 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/29 12:11:47 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/29 15:50:39 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*created;
 
-	content = malloc(sizeof(content));
+	created = (t_list *)malloc(sizeof(t_list));
 	created->content = content;
 	created->next = NULL;
 	return (created);
