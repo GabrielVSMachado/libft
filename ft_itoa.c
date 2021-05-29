@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:20:06 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/29 09:40:08 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/29 09:56:55 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static size_t	len_n(int n_tmp)
 {
 	size_t	len;
 
-	if (n_tmp < 0)
+	if (n_tmp <= 0)
 		len = 1;
 	else
 		len = 0;
