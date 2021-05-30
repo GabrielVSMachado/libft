@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 16:58:11 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/30 13:39:37 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/30 16:42:59 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*p_tmp;
 
-	p_tmp = *lst;
-	while (p_tmp)
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		p_tmp = p_tmp->next;
-		ft_lstdelone(p_tmp, del);
+		p_tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = p_tmp;
 	}
-	*lst = NULL;
 }
