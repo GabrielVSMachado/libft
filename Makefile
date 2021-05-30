@@ -32,10 +32,20 @@ SRCS	= ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_putstr_fd.c
 
-NAME	=	libft.a
-OBJS	=	${SRCS:%.c=%.o}
-CC		=	clang
-CFLAGS	=	-Wall -Werror -Wextra
+BONUS = ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstnew.c \
+			ft_lstsize.c 
+
+NAME		=	libft.a
+OBJS		=	${SRCS:%.c=%.o}
+OBJS_BONUS	= ${BONUS:%.c=%.o}
+CC			=	clang
+CFLAGS		=	-Wall -Werror -Wextra
 
 all:	$(NAME)
 
@@ -45,6 +55,8 @@ $(NAME):	$(OBJS)
 %.o : %.c
 			$(CC) $(CFLAGS) -c $< -o $@
 
+bonus:	$(NAME) $(OBJS_BONUS)
+			$(CC) rc $(NAME) $(OBJS_BONUS)
 clean:
 			$(RM) $(OBJS)
 
