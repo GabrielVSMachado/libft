@@ -6,12 +6,13 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 20:07:06 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/30 22:45:23 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/30 23:16:41 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 static int	n_pointers(char *str_tmp , char c ,char *set);
+static int	check(char **s);
 
 char	**ft_split(const char *s, char c)
 {
@@ -26,20 +27,26 @@ char	**ft_split(const char *s, char c)
 	set[1] = '\0';
 	str_tmp = ft_strtrim(s, set);
 	str = (char **)malloc(sizeof(char *) * (n_pointers(str_tmp, c, set) + 1));
+	if (!check(str))
+		return (NULL);
 	num_p = 0;
-	while (1)
+	while (*str_tmp)
 	{
 		next_char_c = ft_strchr(str_tmp, c);
 		len = next_char_c - str_tmp;
 		if (len > 0)
 		{
 			*(str + num_p) = ft_substr(str_tmp, 0, len);
+			if (!check(str + num_p))
+				return (NULL);
 			num_p++;
 			str_tmp = next_char_c;
 		}
 		else if (!next_char_c)
 		{
 			*(str + num_p) = ft_substr(str_tmp, 0, ft_strlen(str_tmp));
+			if (!check(str + num_p))
+				return (NULL);
 			num_p++;
 			break ;
 		}
@@ -56,9 +63,11 @@ static int	n_pointers(char *str_tmp, char c, char *set)
 	char	*next_char_c;
 
 	number_of_pointer = 0;
-	while (1)
+	while (*str_tmp)
 	{
 		str_tmp = ft_strtrim(str_tmp, set);
+		if (!check((char **)str_tmp))
+			return (0);
 		next_char_c = ft_strchr(str_tmp, c);
 		len = next_char_c - str_tmp;
 		if (!next_char_c)
@@ -75,4 +84,15 @@ static int	n_pointers(char *str_tmp, char c, char *set)
 		
 	}
 	return (number_of_pointer);
+}
+
+static int	check(char **s)
+{
+	if (!s)
+	{
+		while (*s)
+			free(*s++);
+		return (0);
+	}
+	return (1);
 }
