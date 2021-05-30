@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 12:14:02 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/29 12:34:56 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/30 11:13:12 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*p_tmp;
-
-	p_tmp = *lst;
-	*lst = new->next;
-	new->next = p_tmp;
+	new->next = *lst;
+	*lst = new;
 }
