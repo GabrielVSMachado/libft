@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 23:26:44 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/19 23:26:44 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/31 18:29:10 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static	int	is_in_set(char c, const char *set);
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*cpy_s1;
-	size_t	counter_s1;
-	size_t	counter_s1_final;
+	size_t	counter;
+	size_t	counter_f;
 
 	if (s1 == NULL)
 		return (NULL);
@@ -26,18 +26,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 		cpy_s1 = ft_strdup(s1);
 		return (cpy_s1);
 	}
-	counter_s1 = 0;
-	while (s1[counter_s1])
+	counter = 0;
+	while (s1[counter])
 	{
-		if (is_in_set(s1[counter_s1], set))
-			counter_s1++;
-		else if (!is_in_set(s1[counter_s1], set))
+		if (is_in_set(s1[counter], set))
+			counter++;
+		else if (!is_in_set(s1[counter], set))
 			break ;
 	}
-	counter_s1_final = ft_strlen(s1) - 1;
-	while (is_in_set(s1[counter_s1_final], set))
-		counter_s1_final--;
-	cpy_s1 = ft_substr(s1, counter_s1, counter_s1_final - counter_s1 + 1);
+	counter_f = ft_strlen(s1) - 1;
+	while (is_in_set(s1[counter_f], set) && &s1[counter - 1] != &s1[counter_f])
+		counter_f--;
+	cpy_s1 = ft_substr(s1, counter, counter_f - counter + 1);
 	return (cpy_s1);
 }
 
