@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:42:35 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/31 22:03:52 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/31 23:43:18 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new = NULL;
 	while (lst != NULL)
 	{
-		 ft_lstadd_back(&new, ft_lstnew(f(lst->content)));
-		 if (!new)
-		 {
-			 ft_lstclear(&new, del);
-			 free(new);
-			 return (NULL);
-		 }
-		 lst = lst->next;
+		ft_lstadd_back(&new, ft_lstnew(f(lst->content)));
+		if (!new)
+		{
+			ft_lstclear(&new, del);
+			free(new);
+			return (NULL);
+		}
+		lst = lst->next;
 	}
 	return (new);
 }
