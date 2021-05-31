@@ -1,3 +1,4 @@
+.PHONY:	clean re all fclean bonus
 SRCS	= ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -45,20 +46,21 @@ BONUS = ft_lstadd_back.c \
 
 NAME		=	libft.a
 OBJS		=	${SRCS:%.c=%.o}
-OBJS_BONUS	= ${BONUS:%.c=%.o}
+OBJS_BONUS	=	${BONUS:%.c=%.o}
 CC			=	clang
 CFLAGS		=	-Wall -Werror -Wextra
+AR			=	ar rcs
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-			$(AR) rc $(NAME) $(OBJS)
+			$(AR) $(NAME) $(OBJS)
 
 %.o : %.c
 			$(CC) $(CFLAGS) -c $< -o $@
 
 bonus:	$(NAME) $(OBJS_BONUS)
-			$(AR) rc $(NAME) $(OBJS_BONUS)
+			$(AR) $(NAME) $(OBJS_BONUS)
 clean:
 			$(RM) $(OBJS) $(OBJS_BONUS)
 
@@ -66,5 +68,3 @@ fclean:	clean
 			$(RM) $(NAME)
 
 re:		fclean all
-
-.PHONY:	clean re all fclean 
