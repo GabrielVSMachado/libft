@@ -40,7 +40,8 @@ BONUS = ft_lstadd_back.c \
 			ft_lstiter.c \
 			ft_lstlast.c \
 			ft_lstnew.c \
-			ft_lstsize.c 
+			ft_lstsize.c \
+			ft_lstmap.c
 
 NAME		=	libft.a
 OBJS		=	${SRCS:%.c=%.o}
