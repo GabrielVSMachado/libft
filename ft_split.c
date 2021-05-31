@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 09:07:56 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/31 16:52:51 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/31 17:15:29 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	**ft_split(const char *s, char c)
 	set[0] = c;
 	set[1] = 0;
 	p_tmp = ft_strtrim(s, set);
+	if (!p_tmp)
+		return (NULL);
 	str = (char **)ft_calloc(sizeof(char *), n_pointers(p_tmp, c) + 1);
 	pp = p_tmp;
 	while (*p_tmp)
