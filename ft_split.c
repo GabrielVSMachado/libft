@@ -6,13 +6,13 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 09:07:56 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/31 15:00:36 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/05/31 15:51:05 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 static int	check(char **s, int num_p);
-static char	**alloc_str(char **str, char **p_tmp, int len, int *num_p);
+static char	**alloc_str(char **str, char **p_tmp, int c);
 static int	n_pointers(char *s, char c);
 
 char	**ft_split(const char *s, char c)
@@ -22,6 +22,8 @@ char	**ft_split(const char *s, char c)
 	int		num_p;
 	char	set[2];
 
+	if (!s)
+		return (NULL);
 	set[0] = c;
 	set[1] = 0;
 	str = NULL;
@@ -29,29 +31,32 @@ char	**ft_split(const char *s, char c)
 	num_p = n_pointers(p_tmp, c);
 	while (*p_tmp)
 	{
-		str = alloc_str(str, &p_tmp, c, &num_p);
-		if (check(str, num_p))
-			return (NULL);
-		num_p++;
-		while (*p_tmp == c)
+		str = alloc_str(str, &p_tmp, c);
+		while (*p_tmp == c && c != 0)
 			p_tmp++;
 	}
 	return (str);
 }
 
-static char	**alloc_str(char **str, char **p_tmp, int c, int *num_p)
+static char	**alloc_str(char **str, char **p_tmp, int c)
 {
-	int	len;
+	int			len;
+	static int	num_p;
 
 	len = 0;
 	while ((p_tmp[0][len]) != c && p_tmp[0][len] != '\0')
 		len++;
 	if (!str)
 	{
-		str = (char **)ft_calloc(sizeof(char *), *num_p + 1);
-		*num_p = 0;
+		str = (char **)ft_calloc(sizeof(char *), n_pointers(p_tmp[0], c) + 1);
+		if (!str)
+			return (NULL);
+		num_p = 0;
 	}
-	*(str + (*num_p)) = ft_substr(p_tmp[0], 0, len);
+	*(str + (num_p)) = ft_substr(p_tmp[0], 0, len);
+	if (check(str, num_p))
+		return (NULL);
+	num_p++;
 	(p_tmp[0]) += len;
 	return (str);
 }
@@ -68,7 +73,7 @@ static int	n_pointers(char *s, char c)
 		pointers_to_alloc++;
 		while (s[counter] != c && s[counter] != '\0')
 			counter++;
-		while (s[counter] == c)
+		while (s[counter] == c && c != 0)
 			counter++;
 	}
 	return (pointers_to_alloc);
