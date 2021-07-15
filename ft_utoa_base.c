@@ -6,14 +6,14 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:10:36 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/07/15 19:37:18 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/07/15 19:48:36 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 static size_t	len_of_n(size_t n, int	len_base);
 static size_t	power(size_t len_n, int len_base);
-static void		convert_to_str(size_t n, char *base, char *result, size_t pow_base);
+static void		convert_to_str(size_t n, char *base, char *result, size_t pw_b);
 
 char	*ft_utoa_base(size_t n, char *base)
 {
@@ -47,15 +47,15 @@ static size_t	len_of_n(size_t n, int	len_base)
 	return (len);
 }
 
-static void	convert_to_str(size_t n, char *base, char	*result, size_t pow_base)
+static void	convert_to_str(size_t n, char *base, char	*result, size_t pw_b)
 {
 	int	len_base;
 
 	len_base = ft_strlen(base);
-	while (pow_base)
+	while (pw_b)
 	{
-		*(result++) = base[((n / pow_base) % len_base)];
-		pow_base /= len_base;
+		*(result++) = base[((n / pw_b) % len_base)];
+		pw_b /= len_base;
 	}
 }
 
