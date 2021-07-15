@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:10:36 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/07/09 18:10:56 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/07/15 19:37:18 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static size_t	len_of_n(size_t n, int	len_base)
 {
 	size_t	len;
 
+	if (n == 0)
+		return (1);
 	len = 0;
 	while (n)
 	{
@@ -62,7 +64,7 @@ static size_t	power(size_t len_n, int len_base)
 	size_t	pow;
 
 	pow = 1;
-	while (len_n != 1)
+	while (len_n > 1)
 	{
 		pow *= len_base;
 		len_n--;
