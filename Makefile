@@ -33,7 +33,8 @@ SRCS	= ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_putstr_fd.c \
-		ft_utoa_base.c
+		ft_utoa_base.c \
+		ft_strcmp.c
 
 BONUS = ft_lstadd_back.c \
 			ft_lstadd_front.c \
@@ -58,7 +59,7 @@ $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
 %.o : %.c
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) -I. $(CFLAGS) -c $< -o $@
 
 bonus:	$(NAME) $(OBJS_BONUS)
 			$(AR) $(NAME) $(OBJS_BONUS)
