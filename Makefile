@@ -34,7 +34,8 @@ SRCS	= ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_putstr_fd.c \
 		ft_utoa_base.c \
-		ft_strcmp.c
+		ft_strcmp.c  \
+		ft_atod.c
 
 BONUS = ft_lstadd_back.c \
 			ft_lstadd_front.c \
