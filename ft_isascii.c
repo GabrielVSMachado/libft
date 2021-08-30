@@ -6,12 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:01:06 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/11 14:22:46 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:13:31 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define TRUE 1
-#define FALSE 0
+#include "libft.h"
+
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)

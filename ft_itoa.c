@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:20:06 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/31 23:12:22 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:06:54 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static size_t	len_n(int n);
 static void		convert_n_str(char *p_str, int n, size_t len);
 

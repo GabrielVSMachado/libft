@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 21:10:40 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/08/12 17:02:06 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:09:29 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static unsigned int	multiply_by_10(unsigned int *z);
 static double		make_result(char *str);
 

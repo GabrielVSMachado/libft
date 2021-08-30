@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 09:07:56 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/31 17:15:29 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:07:33 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static int	check(char **s, int num_p);
 static char	**alloc_str(char **str, char **p_tmp, int c);
 static int	n_pointers(char *s, char c);

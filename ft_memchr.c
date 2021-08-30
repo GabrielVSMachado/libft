@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 18:38:04 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/18 18:38:06 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:01:47 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
+
 void	*ft_memchr(const void *str, int c, size_t n)
 {
 	unsigned char	*c_str;

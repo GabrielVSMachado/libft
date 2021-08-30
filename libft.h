@@ -6,12 +6,15 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:08:19 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/08/12 16:49:15 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:12:59 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define TRUE 1
+# define FALSE 0
 
 # include <stdlib.h>
 # include <unistd.h>

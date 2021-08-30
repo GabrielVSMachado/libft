@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 18:37:48 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/26 19:40:16 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:06:19 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
+
 void	*ft_memcpy(void *dst, const void *src, size_t buffer_size)
 {
 	size_t			count_d;

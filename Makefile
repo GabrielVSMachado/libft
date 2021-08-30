@@ -51,7 +51,7 @@ NAME		=	libft.a
 OBJS		=	${SRCS:%.c=%.o}
 OBJS_BONUS	=	${BONUS:%.c=%.o}
 CC			=	clang
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-O3 -Wall -Werror -Wextra
 AR			=	ar rcs
 
 all:	$(NAME)

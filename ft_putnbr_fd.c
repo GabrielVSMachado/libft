@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 11:21:00 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/27 17:21:30 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:10:19 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	put_n_tmp(size_t n_tmp, int fd);
 
 void	ft_putnbr_fd(int n, int fd)

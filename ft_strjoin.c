@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 20:04:44 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/28 16:00:06 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:14:11 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*final_str;

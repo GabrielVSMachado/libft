@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:18:29 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/28 15:58:25 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:08:40 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;

@@ -6,11 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 23:26:44 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/31 18:29:10 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:08:53 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static	int	is_in_set(char c, const char *set);
 
 char	*ft_strtrim(char const *s1, char const *set)

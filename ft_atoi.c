@@ -6,12 +6,12 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 12:16:45 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/05/24 10:34:37 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:13:51 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#define	TRUE 1
-#define	FALSE 0
+
 static	int	is_space(int c);
 
 int	ft_atoi(const char *str)
