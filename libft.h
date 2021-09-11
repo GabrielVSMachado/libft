@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:08:19 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/09/11 15:35:32 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/09/11 17:23:52 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_abs(int n);
-int		ft_hsv_to_rgb(double h, double v, double s, t_rgb *rgb);
+int		ft_hsv_to_rgb(double h, double v, double s);
 
 /*BONUS PART*/
 t_list	*ft_lstnew(void *content);
