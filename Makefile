@@ -35,6 +35,8 @@ SRCS	= ft_atoi.c \
 		ft_putstr_fd.c \
 		ft_utoa_base.c \
 		ft_strcmp.c  \
+		ft_abs.c	\
+		ft_hsv_to_rgb.c \
 		ft_atod.c
 
 BONUS = ft_lstadd_back.c \

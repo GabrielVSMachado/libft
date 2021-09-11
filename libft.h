@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:08:19 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/08/30 14:12:59 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/09/11 14:30:19 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,18 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct s_rgb
+{
+	double	r;
+	double	g;
+	double	b;
+}	t_rgb;
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}				t_list;
+}	t_list;
 /*MANDATORY PART*/
 void	ft_bzero(void *s, size_t n);
 void	ft_putchar_fd(char c, int fd);
@@ -36,6 +43,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t type, size_t size);
+void	ft_hsv_to_rgb(double h, double v, double s, t_rgb *rgb);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
@@ -62,6 +70,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_abs(int n);
 
 /*BONUS PART*/
 t_list	*ft_lstnew(void *content);
