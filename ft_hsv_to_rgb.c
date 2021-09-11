@@ -6,12 +6,13 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 11:22:19 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/09/11 14:39:33 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2021/09/11 15:35:06 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	rgb_format(t_rgb *rgb);
 typedef struct s_conv
 {
 	double	c;
@@ -20,7 +21,7 @@ typedef struct s_conv
 	int		h_;
 }	t_conv;
 
-void	ft_hsv_to_rgb(double h, double v, double s, t_rgb *rgb)
+int	ft_hsv_to_rgb(double h, double v, double s, t_rgb *rgb)
 {
 	t_conv	conv;
 
@@ -40,7 +41,20 @@ void	ft_hsv_to_rgb(double h, double v, double s, t_rgb *rgb)
 	else if (5 < conv.h_ && 6 >= conv.h_)
 		*rgb = (t_rgb){.r = conv.c, .g = 0, .b = conv.x};
 	conv.m = v - conv.c;
-	rgb->r = (int)((rgb->r + conv.m) * 255);
-	rgb->g = (int)((rgb->g + conv.m) * 255);
-	rgb->b = (int)((rgb->b + conv.m) * 255);
+	rgb->r += conv.m;
+	rgb->g += conv.m;
+	rgb->b += conv.m;
+	return (rgb_format(rgb));
+}
+
+static int	rgb_format(t_rgb *rgb)
+{
+	int	r;
+	int	g;
+	int	b;
+
+	r = (int)(rgb->r * 255);
+	g = (int)(rgb->g * 255);
+	b = (int)(rgb->b * 255);
+	return (((r & 0xFF) << 16) + ((g & 0xFF) << 8) + ((b & 0xFF) << 0));
 }
