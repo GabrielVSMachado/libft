@@ -14,13 +14,6 @@
 
 static int		rgb_format(t_rgb *rgb);
 static double	fabs(double n);
-typedef struct s_conv
-{
-	double	c;
-	double	x;
-	double	m;
-	double	h_;
-}	t_conv;
 
 int	ft_hsv_to_rgb(double h, double v, double s)
 {
