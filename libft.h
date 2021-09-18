@@ -19,13 +19,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_conv
+typedef struct s_hsv
 {
 	double	c;
 	double	x;
 	double	m;
 	double	h_;
-}	t_conv;
+}	t_hsv;
 
 typedef struct s_rgb
 {
