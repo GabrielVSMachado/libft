@@ -17,7 +17,7 @@ static double	fabs(double n);
 
 int	ft_hsv_to_rgb(double h, double v, double s)
 {
-	t_conv	conv;
+	t_hsv	conv;
 	t_rgb	rgb;
 
 	conv.c = v * s;
