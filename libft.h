@@ -19,6 +19,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef unsigned char	t_byte;
+
 typedef struct s_hsv
 {
 	double	c;
