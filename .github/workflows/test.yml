@@ -1,0 +1,24 @@
+name: Tests
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  test-on-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: test on ubuntu-latest
+        run: make test
+
+  test-on-arch-linux:
+    runs-on: archlinux
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: test on archlinux
+        run:  make test
+
+
