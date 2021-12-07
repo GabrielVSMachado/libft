@@ -1,4 +1,3 @@
-.PHONY:	clean re all fclean bonus
 SRCS	= ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -37,7 +36,8 @@ SRCS	= ft_atoi.c \
 		ft_strcmp.c  \
 		ft_abs.c	\
 		ft_hsv_to_rgb.c \
-		ft_atod.c
+		ft_atod.c \
+		$(BONUS)
 
 BONUS = ft_lstadd_back.c \
 			ft_lstadd_front.c \
@@ -49,27 +49,49 @@ BONUS = ft_lstadd_back.c \
 			ft_lstsize.c \
 			ft_lstmap.c
 
-NAME		=	libft.a
-OBJS		=	${SRCS:%.c=%.o}
-OBJS_BONUS	=	${BONUS:%.c=%.o}
-CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra
+
+OS	:= $(findstring Arch,$(file < /etc/os-release))
+
+ifeq ($(OS),Arch)
+	CC	:=	gcc
+else
+	CC	:= clang
+endif
+
+CFLAGS		=	-Wall -Werror -Wextra -g
 AR			=	ar rcs
+RM			:= rm -rf
+
+vpath %.c src
+
+NAME		=	libft.a
+TEST		:=	test
+OBJDIR		:=	obj
+OBJS		=	${SRCS:%.c=$(OBJDIR)/%.o}
 
 all:	$(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJDIR) $(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
-%.o : %.c
+$(OBJDIR)/%.o : %.c
 			$(CC) -I. $(CFLAGS) -c $< -o $@
 
-bonus:	$(NAME) $(OBJS_BONUS)
-			$(AR) $(NAME) $(OBJS_BONUS)
+$(OBJDIR):
+			@mkdir -p $@
+
 clean:
-			$(RM) $(OBJS) $(OBJS_BONUS)
+			$(RM) $(OBJDIR)
 
 fclean:	clean
 			$(RM) $(NAME)
+			$(RM) $(TEST)
 
 re:		fclean all
+
+test: $(NAME)
+	$(CC) -I. -I./Tests Tests/tests.c -o $(TEST) -L. -lft
+	@./$(TEST) || exit 1
+	@$(MAKE) fclean > /dev/null
+
+.PHONY:	clean re all fclean
