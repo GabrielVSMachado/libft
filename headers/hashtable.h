@@ -13,7 +13,7 @@
 #ifndef HASHTABLE_H
 # define HASHTABLE_H
 
-# define TABLE_SIZE 10;
+# define TABLE_SIZE 10
 
 int	hash_generate(const void *content);
 #endif
