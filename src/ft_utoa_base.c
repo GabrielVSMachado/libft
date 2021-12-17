@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include <libft.h>
 
 static size_t	len_of_n(size_t n, int len_base);
 static size_t	power(size_t len_n, int len_base);
