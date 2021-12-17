@@ -37,7 +37,8 @@ SRCS	= ft_atoi.c \
 		ft_abs.c	\
 		ft_hsv_to_rgb.c \
 		ft_atod.c \
-		$(BONUS)
+		$(BONUS) \
+		$(HASHTABLE)
 
 BONUS = ft_lstadd_back.c \
 			ft_lstadd_front.c \
@@ -49,6 +50,7 @@ BONUS = ft_lstadd_back.c \
 			ft_lstsize.c \
 			ft_lstmap.c
 
+HASHTABLE = hashtable.c
 
 OS	:= $(findstring Arch,$(file < /etc/os-release))
 
@@ -62,10 +64,12 @@ CFLAGS		=	-Wall -Werror -Wextra -g
 AR			=	ar rcs
 RM			:= rm -rf
 
-vpath %.c src
+vpath %.c src src/hash_table
 
 NAME		=	libft.a
 TEST		:=	test
+HEADERSDIR	:= headers
+HEADERS		:= -I$(HEADERSDIR)
 OBJDIR		:=	obj
 OBJS		=	${SRCS:%.c=$(OBJDIR)/%.o}
 
@@ -75,7 +79,7 @@ $(NAME):	$(OBJDIR) $(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
 $(OBJDIR)/%.o : %.c
-			$(CC) -I. $(CFLAGS) -c $< -o $@
+			$(CC) $(HEADERS) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR):
 			@mkdir -p $@
