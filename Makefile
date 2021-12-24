@@ -52,6 +52,10 @@ BONUS = ft_lstadd_back.c \
 
 HASHTABLE = hashtable.c
 
+TEST		:=	test
+TEST_DIR		:=	Tests
+TEST_FILES = $(wildcard $(TEST_DIR)/*.c)
+
 OS	:= $(findstring Arch,$(file < /etc/os-release))
 
 ifeq ($(OS),Arch)
@@ -64,14 +68,14 @@ CFLAGS		=	-Wall -Werror -Wextra -g
 AR			=	ar rcs
 RM			:= rm -rf
 
-vpath %.c src src/hash_table
+vpath %.c src src/hash_table Tests
 
 NAME		=	libft.a
-TEST		:=	test
 HEADERSDIR	:= headers
 HEADERS		:= -I$(HEADERSDIR)
 OBJDIR		:=	obj
 OBJS		=	${SRCS:%.c=$(OBJDIR)/%.o}
+TESTOBJ		= 	$(TEST_FILES:$(TEST_DIR)/%.c=$(OBJDIR)/%.o)
 
 all:	$(NAME)
 
@@ -93,8 +97,8 @@ fclean:	clean
 
 re:		fclean all
 
-test: $(NAME)
-	$(CC) -I. -I./Tests Tests/tests.c -o $(TEST) -L. -lft
+test: $(NAME) $(TESTOBJ)
+	$(CC) $(HEADERS) $(TESTOBJ) -o $(TEST) -L. -lft -lcriterion
 	@./$(TEST) || exit 1
 	@$(MAKE) fclean > /dev/null
 
