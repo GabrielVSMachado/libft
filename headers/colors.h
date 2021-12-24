@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   colors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 17:08:19 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/09/11 17:23:52 by gvitor-s         ###   ########.fr       */
+/*   Created: 2021/12/23 20:49:35 by gvitor-s          #+#    #+#             */
+/*   Updated: 2021/12/23 20:49:35 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef COLORS_H
+# define COLORS_H
 
-# define TRUE 1
-# define FALSE 0
-# define ERROR -1
-# define SUCCESS 0
+typedef struct s_hsv
+{
+	double	c;
+	double	x;
+	double	m;
+	double	h_;
+}	t_hsv;
 
-# include <colors.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <ft_stdio.h>
-# include <ft_ctype.h>
-# include <hashtable.h>
-# include <ft_stdlib.h>
-# include <ft_string.h>
-# include <linked_list.h>
+typedef struct s_rgb
+{
+	double	r;
+	double	g;
+	double	b;
+}	t_rgb;
 
+int		ft_hsv_to_rgb(double h, double v, double s);
 #endif

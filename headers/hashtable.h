@@ -13,7 +13,23 @@
 #ifndef HASHTABLE_H
 # define HASHTABLE_H
 
-# define TABLE_SIZE 10
+typedef struct s_llhashtbl
+{
+	char				*key;
+	void				*content;
+	struct s_llhashtbl	*next;
+}	t_llhashtbl;
 
-int	hash_generate(const void *content);
+typedef struct s_hashtb
+{
+	unsigned int		size;
+	unsigned int		n_buckets;
+	int					(*hash)(const void *, unsigned int);
+	void				(*del)(void *);
+	struct s_llhashtbl	*table;
+}	t_hashtb;
+
+int	hash_generate(const void *content, unsigned int table_size);
+int	hashtbl_init(void *data, unsigned int n_buckets,
+		int (*hash)(const void *, unsigned int), void (*del)(void *));
 #endif

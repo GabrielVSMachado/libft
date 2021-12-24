@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stdio.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 17:08:19 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/09/11 17:23:52 by gvitor-s         ###   ########.fr       */
+/*   Created: 2021/12/23 21:16:54 by gvitor-s          #+#    #+#             */
+/*   Updated: 2021/12/23 21:16:54 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_STDIO_H
+# define FT_STDIO_H
 
-# define TRUE 1
-# define FALSE 0
-# define ERROR -1
-# define SUCCESS 0
-
-# include <colors.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <ft_stdio.h>
-# include <ft_ctype.h>
-# include <hashtable.h>
-# include <ft_stdlib.h>
-# include <ft_string.h>
-# include <linked_list.h>
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
