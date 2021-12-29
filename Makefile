@@ -98,7 +98,7 @@ fclean:	clean
 re:		fclean all
 
 test: $(NAME) $(TESTOBJ)
-	$(CC) $(HEADERS) $(TESTOBJ) -o $(TEST) -L. -lft -lcriterion
+	$(CC) $(HEADERS) $(TESTOBJ) -o $(TEST) -L. -lft -lcriterion -fsanitize=address
 	@./$(TEST) || exit 1
 	@$(MAKE) fclean > /dev/null
 
