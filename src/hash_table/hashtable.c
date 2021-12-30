@@ -20,13 +20,13 @@
  be in the first fours bits of a char type
  then set to zero the first fours of the unsigned int.
  *Is a good algorithm for string hashs*/
-int	hash_generate(const void *content)
+int	hash_generate(const void *key, unsigned int table_size)
 {
 	unsigned int	val;
 	unsigned int	tmp;
 	char			*ptr;
 
-	ptr = (char *)content;
+	ptr = (char *)key;
 	val = 0;
 	while (*ptr != 0)
 	{
@@ -39,5 +39,23 @@ int	hash_generate(const void *content)
 		}
 		ptr++;
 	}
-	return (val % TABLE_SIZE);
+	return (val % table_size);
+}
+
+int	hashtbl_init(void *data, unsigned int n_buckets,
+		int (*hash)(const void *, unsigned int), void (*del)(void *))
+{
+	t_hashtb	*tmp;
+
+	if (!hash || !data || n_buckets <= 0)
+		return (ERROR);
+	tmp = (t_hashtb *)data;
+	tmp->table = (t_llhashtbl *)ft_calloc(sizeof(t_llhashtbl *), n_buckets);
+	if (!tmp->table)
+		return (ERROR);
+	tmp->hash = hash;
+	tmp->del = del;
+	tmp->size = 0;
+	tmp->n_buckets = n_buckets;
+	return (SUCCESS);
 }
