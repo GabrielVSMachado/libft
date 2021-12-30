@@ -70,13 +70,13 @@ static int	number_of_pointers(const char *tmp, char c)
 	n_pointers = 0;
 	while (tmp != NULL && *tmp != 0)
 	{
-		if (*(tmp) != c && *(tmp) != 0)
+		if (*(tmp) != c)
 		{
 			n_pointers += 1;
 			tmp += (ft_strchr(tmp, c) - tmp);
+			continue ;
 		}
-		if (tmp != NULL)
-			tmp += 1;
+		tmp += 1;
 	}
 	return (n_pointers);
 }

@@ -21,13 +21,13 @@ static int	number_of_pointers(const char *tmp, char c)
 	n_pointers = 0;
 	while (tmp != NULL && *tmp != '\0')
 	{
-		if (*(tmp) != c && *(tmp) != '\0')
+		if (*(tmp) != c)
 		{
 			n_pointers += 1;
 			tmp += (ft_strchr(tmp, c) - tmp);
+			continue;
 		}
-		if (tmp != NULL)
-			tmp += 1;
+		tmp += 1;
 	}
 	return (n_pointers);
 }
@@ -78,6 +78,17 @@ Test(split, expected_char_pp_with_three_strings)
 	for (int i = 0; i < 3; i++) {
 		cr_expect_str_eq(result[i], expected[i], "String error: %s\n", result[i]);
 	}
+	destroy(result);
+	free(result);
+}
+
+Test(split, expected_char_pp_with_one_string) {
+	char	**result = ft_split("    gabriel     ", ' ');
+	char	*expected[] = {"gabriel", NULL};
+
+	cr_assert_str_eq(result[0], expected[0],
+			"Get string: %s ; expected: %s\n", result[0], expected[0]);
+	cr_assert(result[1] == NULL);
 	destroy(result);
 	free(result);
 }
