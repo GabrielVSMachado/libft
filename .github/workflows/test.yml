@@ -12,5 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        name: setup criterion
+        run: |
+          add-apt-repository ppa:snaipewastaken/ppa
+          apt-get update
+          apt-get install -y criterion-dev
       - name: test on ubuntu-latest
         run: make test
