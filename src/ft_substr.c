@@ -16,7 +16,7 @@ static unsigned int	number_to_alloc(size_t len_str, size_t start,
 		size_t max_len)
 {
 	if (len_str < start)
-		return (1);
+		return (0);
 	else if (len_str - start > max_len)
 		return (max_len);
 	return (len_str - start);
