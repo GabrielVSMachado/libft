@@ -2,18 +2,6 @@
 #include <signal.h>
 #include <criterion/criterion.h>
 
-static void	destroy(char **result)
-{
-	char	**tmp;
-
-	tmp = result;
-	while (*tmp != NULL)
-	{
-		free(*tmp);
-		tmp++;
-	}
-}
-
 static int	number_of_pointers(const char *tmp, char c)
 {
 	int		n_pointers;
@@ -59,8 +47,8 @@ Test(number_of_pointers, check_with_the_pointer_doesnt_change) {
 	int np = number_of_pointers(tmp, ' ');
 	cr_assert(tmp == tmp_2, "Adress are wrong, string was moved");
 	cr_assert(np == 2);
-	free(tmp);
 }
+
 
 Test(number_of_pointers, expected_1) {
 	cr_assert(number_of_pointers("gabriels", 's') == 1);
@@ -78,8 +66,6 @@ Test(split, expected_char_pp_with_three_strings)
 	for (int i = 0; i < 3; i++) {
 		cr_expect_str_eq(result[i], expected[i], "String error: %s\n", result[i]);
 	}
-	destroy(result);
-	free(result);
 }
 
 Test(split, expected_char_pp_with_one_string) {
@@ -89,6 +75,27 @@ Test(split, expected_char_pp_with_one_string) {
 	cr_assert_str_eq(result[0], expected[0],
 			"Get string: %s ; expected: %s\n", result[0], expected[0]);
 	cr_assert(result[1] == NULL);
-	destroy(result);
-	free(result);
+}
+
+Test(split, expected_null_pointer) {
+	char	**result = ft_split("              ", ' ');
+	char	*expected[] = {NULL};
+
+	cr_assert(result[0] == expected[0],
+			"Wrong return when string only contains character to split\n");
+}
+
+Test(split, test_with_null_pointer) {
+	char	**result = ft_split(NULL, 0);
+
+	cr_assert(result == NULL);
+}
+
+Test(split, test_with_empty_string) {
+	char	*tmp = malloc(sizeof(char));
+	*tmp = 0;
+	char	**result = ft_split(tmp, 0);
+	char	*expected[] = {NULL};
+
+	cr_assert(result[0] == expected[0]);
 }
