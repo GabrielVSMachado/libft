@@ -85,10 +85,10 @@ Test(split, expected_null_pointer) {
 			"Wrong return when string only contains character to split\n");
 }
 
-Test(split, test_with_null_pointer) {
+Test(split, test_with_null_pointer, .signal = SIGSEGV) {
 	char	**result = ft_split(NULL, 0);
 
-	cr_assert(result == NULL);
+	free(result);
 }
 
 Test(split, test_with_empty_string) {
