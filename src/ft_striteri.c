@@ -12,11 +12,14 @@
 
 #include <libft.h>
 
-void	ft_stditeri(char *str, void (*f)(unsigned int, char *))
+void	ft_striteri(char *str, void (*f)(unsigned int, char *))
 {
-	while (*str != 0)
+	int	index;
+
+	index = 0;
+	while (str[index] != '\0')
 	{
-		f(*str, str);
-		str += 1;
+		f(index, &str[index]);
+		index += 1;
 	}
 }
