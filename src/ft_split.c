@@ -41,7 +41,6 @@ static int	fill_pointers(char **result, char *str, int n_pointers)
 		tmp += (ft_strlen(*fill_pointers) + 1);
 		fill_pointers += 1;
 	}
-	*fill_pointers = NULL;
 	return (SUCCESS);
 }
 
@@ -84,18 +83,15 @@ static int	number_of_pointers(const char *tmp, char c)
 char	**ft_split(const char *s, char c)
 {
 	char	**result;
-	char	*tmp;
 	char	*changed_str;
 	int		n_pointers;
 
-	tmp = (char *)s;
-	while (*tmp == c)
-		tmp += 1;
-	n_pointers = number_of_pointers(tmp, c);
+	n_pointers = number_of_pointers(s, c);
 	result = (char **)malloc(sizeof(char *) * (n_pointers + 1));
 	if (result == NULL)
 		return (NULL);
-	changed_str = change_c_to_null(tmp, c);
+	result[n_pointers] = NULL;
+	changed_str = change_c_to_null(s, c);
 	if (changed_str == NULL)
 	{
 		destroy(result);
