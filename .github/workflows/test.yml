@@ -17,9 +17,9 @@ jobs:
           wget https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2
           tar -xf criterion-v2.3.3-linux-x86_64.tar.bz2
           cd criterion-v2.3.3
-          mv include/* /usr/include/
-          mv lib/* /usr/lib/
-          mv share/pkgconfig/* /usr/bin/pkgconfig/
+          sudo mv include/* /usr/include/
+          sudo mv lib/* /usr/lib/
+          sudo mv share/pkgconfig/* /usr/bin/pkgconfig/
           cd ..
           sudo apt-get update
       - name: test on ubuntu-latest
