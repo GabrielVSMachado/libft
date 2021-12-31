@@ -95,13 +95,16 @@ char	**ft_split(const char *s, char c)
 	if (changed_str == NULL)
 	{
 		destroy(result);
-		return (free(result), NULL);
+		free(result);
+		return (NULL);
 	}
 	if (fill_pointers(result, changed_str, n_pointers) == ERROR)
 	{
 		destroy(result);
 		free(changed_str);
-		return (free(result), NULL);
+		free(result);
+		return (NULL);
 	}
-	return (free(changed_str), result);
+	free(changed_str);
+	return (result);
 }
