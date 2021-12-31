@@ -30,7 +30,7 @@ char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	*ft_substr(char const *str, unsigned int start, size_t len);
+char	*ft_substr(const char *str, size_t start, size_t max_len);
 
 char	**ft_split(char const *s, char c);
 

@@ -10,32 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static unsigned int	number_to_alloc(size_t len_str, size_t start,
+		size_t max_len)
 {
-	char	*substr;
-	size_t	counter;
-	size_t	len_alloc;
-	size_t	len_s;
+	if (len_str < start)
+		return (1);
+	else if (len_str - start > max_len)
+		return (max_len);
+	return (len_str - start);
+}
 
-	if (!s)
-		return (NULL);
-	len_s = ft_strlen(s);
-	if (len_s < (size_t)start)
-		len_alloc = 1;
-	else if (len_s - (size_t)start > len)
-		len_alloc = len;
-	else
-		len_alloc = len_s - (size_t)start;
-	substr = (char *)malloc(sizeof(char) * (len_alloc + 1));
+char	*ft_substr(const char *str, size_t start, size_t max_len)
+{
+	char			*substr;
+	size_t			counter;
+	unsigned int	n_to_alloc;
+	size_t			len_str;
+
+	len_str = ft_strlen(str);
+	n_to_alloc = number_to_alloc(len_str, start, max_len);
+	substr = (char *)malloc(sizeof(char) * (n_to_alloc + 1));
 	if (substr == NULL)
 		return (NULL);
 	counter = 0;
-	while (counter < len && (len_s > (size_t)start))
+	if (len_str > start)
 	{
-		substr[counter] = s[start + counter];
-		counter++;
+		while (counter < n_to_alloc)
+		{
+			substr[counter] = str[start + counter];
+			counter += 1;
+		}
 	}
 	substr[counter] = '\0';
 	return (substr);
