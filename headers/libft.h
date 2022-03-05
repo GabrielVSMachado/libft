@@ -17,6 +17,9 @@
 # define FALSE 0
 # define ERROR -1
 # define SUCCESS 0
+# define AND &&
+# define OR ||
+# define NOT !
 
 # include <colors.h>
 # include <stdlib.h>
