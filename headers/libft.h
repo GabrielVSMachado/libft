@@ -26,7 +26,6 @@
 # include <unistd.h>
 # include <ft_stdio.h>
 # include <ft_ctype.h>
-# include <hashtable.h>
 # include <ft_stdlib.h>
 # include <ft_string.h>
 # include <linked_list.h>

@@ -39,7 +39,6 @@ SRCS	= ft_atoi.c \
 		ft_hsv_to_rgb.c \
 		ft_atod.c \
 		$(BONUS) \
-		$(HASHTABLE)
 
 BONUS = ft_lstadd_back.c \
 			ft_lstadd_front.c \
@@ -50,8 +49,6 @@ BONUS = ft_lstadd_back.c \
 			ft_lstnew.c \
 			ft_lstsize.c \
 			ft_lstmap.c
-
-HASHTABLE = hashtable.c
 
 TEST		:=	test
 TEST_DIR		:=	Tests
