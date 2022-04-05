@@ -6,7 +6,7 @@
 /*   By: gvitor-s <gvitor-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 11:22:19 by gvitor-s          #+#    #+#             */
-/*   Updated: 2021/09/11 17:25:17 by gvitor-s         ###   ########.fr       */
+/*   Updated: 2022/04/05 18:20:47 by gvitor-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_hsv_to_rgb(double h, double v, double s)
 	t_hsv	conv;
 	t_rgb	rgb;
 
+	rgb = (t_rgb){};
 	conv.c = v * s;
 	conv.h_ = h / 60;
 	conv.x = conv.c * (1 - fabs(((int)conv.h_ % 2) - 1
